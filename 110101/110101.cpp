@@ -1,5 +1,4 @@
 #include <iostream>
-#include <fstream>
 #include <cstring>
 
 using namespace std;
@@ -55,11 +54,7 @@ int startf(int i , int j)
 int main()
 {
   int i,j,len[10000],count=0,max=0,x,y;
-  ifstream infile;
-  ofstream outfile;
-  infile.open("110101.inp",ios::in);
-  outfile.open("110101.oup",ios::out);
-  while(cin>>i>>j)
+    while(cin>>i>>j)
     {
       if(i>j)
 	max = startf(j,i);
@@ -68,9 +63,7 @@ int main()
      
       cout<<i<<" "<<j<<" "<<max<<"\n";
     }
-  infile.close();
-  outfile.close();
-  return(0);
+   return(0);
 }
 
 
