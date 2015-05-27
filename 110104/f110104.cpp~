@@ -1,0 +1,23 @@
+#include <iostream>
+#include <fstream>
+#include <cstring>
+#include <iomanip>
+
+using namespace std;
+
+
+int main()
+{
+  ifstream infile;
+  ofstream outfile;
+  infile.open("110104.inp",ios::in);
+  outfile.open("f110104.oup",ios::out);
+  long double n;
+  int s;
+  infile>>s;
+  infile>>n;
+  cout<<s<<" "<<n"\n";
+  infile.close();
+  outfile.close();
+  return(0);
+}

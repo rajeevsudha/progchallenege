@@ -1,0 +1,38 @@
+#include <iostream>
+#include <fstream>
+#include <cstring>
+#include <iomanip>
+
+using namespace std;
+
+
+int main()
+{
+  ifstream infile;
+  ofstream outfile;
+  infile.open("110103.inp",ios::in);
+  outfile.open("f110103.oup",ios::out);
+  int i,j,n;
+  float s[1000],sum=0,avg=0,exch=0;
+  while(cin>>n)
+    {
+      if(n==0)
+	break;
+      for(i = 0;i<n;i++)
+	{
+	  cin>>s[i];
+	  sum = sum+s[i];
+	}
+      avg = sum/n;
+      for(i=0;i<n;i++)
+	{
+	  if(s[i]>avg)
+	    exch = exch + s[i]-avg;
+	}
+      cout<<"$"<< setiosflags(ios::fixed | ios::showpoint)<<setprecision(2)<<exch<<"\n";
+      sum = 0;exch=0;n=0;
+    }
+  infile.close();
+  outfile.close();
+  return(0);
+}
